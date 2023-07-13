@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>:: แผนที่ยุพราชวิทยาลัยอาคารเพชรรัตนราชสุดา ::</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <meta content="อาคาร12 อาคารวชิรดารา" name="description" />
+  <meta content="แผนที่ยุพราชวิทยาลัย(อาคาร12)" name="author" />
+  <link href="css/style1.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    html,
+		body {
+		margin: 0; 
+    background-repeat:no-repeat;
+    background-color: #FEEEEC;
+	}
+  .banner{
+    background-color: #FD7094;
+    height: 200px;
+  }
+  .banner__content{
+    padding: 5%; 
+    max-height: 10%;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+   }
+  .banner__text{
+    flex-grow: 20;
+    font-size: 24PX;
+    font-family: Cambria, Cochin, Georgia, kanit, 'Times New Roman', serif;
+    text-align: center;
+    
+  }
+   .main{ 
+   max-width: 100%;
+   margin: 0 auto;
+   font-size: 18PX;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   border-style: dashed;
+   border-color: #FE7F9B;
+   border-radius: 12px;
+   padding: 10px;
+   border-width: 6px;
+   background-color: #FFA6AF;
+
+   }
+   .back{ 
+   max-width: 100%;
+   margin: 0 auto;
+   font-size: 0%;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   }
+	
+   .table{ 
+   max-width: 100%;
+   margin: 0 auto;
+   font-size: 18PX;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   background-color: #FFB5BB;
+   }
+   .img{
+   margin: 0 auto;
+   max-width: 100%;
+   text-align: center;
+   padding: 3%;
+   }
+   
+  </style>
+  <body>
+   
+    <div class="banner">
+      <div class="banner__content"> 
+        <div class="banner__text"> <h1>YUPPARAJ MAP อาคาร10 <br>อาคารเพชรรัตนราชสุดา</h1>
+        </div>
+      </div>
+    </div>
+    
+    <div class="back">
+      <p>Latitude: <span id="latitude"></span></p><p>Longitude: <span id="longitude"></span></p> 
+    </div>
+    
+    <div class="img">
+      <img src="img/10/10yup.JPG" width="90%" height="60%" >
+    </div>
+    
+    <script>
+      function showPosition(position) {
+        var latitudeElement = document.getElementById("latitude");
+        var longitudeElement = document.getElementById("longitude");
+  
+        latitudeElement.textContent = position.coords.latitude;
+        longitudeElement.textContent = position.coords.longitude;
+  
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+  
+        var anchorElement = document.getElementById("mapurl");
+        var map_address = "https://www.google.com/maps/dir/"+lat+","+long+"/18.791070077478473, 98.98898794448576";
+        anchorElement.href = map_address;
+      }
+  
+      function showError(error) {
+        var latitudeElement = document.getElementById("latitude");
+        var longitudeElement = document.getElementById("longitude");
+  
+        latitudeElement.textContent = "Error: " + error.message;
+        longitudeElement.textContent = "Error: " + error.message;
+      }
+  
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        var latitudeElement = document.getElementById("latitude");
+        var longitudeElement = document.getElementById("longitude");
+  
+        latitudeElement.textContent = "Geolocation is not supported.";
+        longitudeElement.textContent = "Geolocation is not supported.";
+      }
+    </script>
+  <div class="main">
+    <p class="h2">เส้นทางไปยังสถานที่</p>
+    <a id="mapurl" href="google.com"><button class="btn btn-warning btn-md">นำทาง</button></a>
+  </div>
+  
+  <div class="table">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12"
+  <h2>ห้อง ณ อาคาร</h2>
+  <table border="1" width="100%">
+    <thead align="center">
+       <th width="5%">ชั้น</th> <th width="15%">รหัสห้อง</th> <th width="30%">ชื่อห้อง/หน้าที่</th> <th width="50%">รูปห้อง</th>
+    </thead>
+    <tbody align="center">
+       <tr>
+        <td rowspan="5"> 1 </td> <td>1011</td> <td>ห้องศูนย์โอลิมปิก</td> <td><img src="img/10/1011.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1012</td> <td>ห้องลูกเสือ</td> <td><img src="img/10/1012.jpg" width="90%" height="60%" ></td>  
+       </tr>
+       <tr>
+        <td>1013</td> <td>ห้องสภานักเรียน</td> <td><img src="img/10/1013.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1014</td> <td>ห้องประชาสัมพันธ์</td> <td><img src="img/10/1014.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1015</td> <td>ห้องเกียรติยศ</td> <td><img src="img/10/1015.jpg" width="90%" height="60%" ></td>  
+       </tr>
+      </tr>
+       <td rowspan="5"> 2 </td> <td>1221</td> <td>ห้องเรียนคอมพิวเตอร์</td> <td><img src="img/10/1021.jpg" width="90%" height="60%"></td> 
+       </tr>
+       <tr>
+        <td>1222</td> <td>ห้อง ม.4/1</td> <td><img src="img/10/1022.jpg" width="90%" height="60%" >
+       </tr>
+       <tr>
+        <td>1223</td> <td>ห้องพักครูคอมพิวเตอร์ <br> และ ห้องเซิฟเวอร์</td> <td><img src="img/10/1023.1.jpg" width="90%" height="60%" >
+       </tr>
+       <tr>
+        <td>1224</td> <td>ห้องพักครูคอมพิวเตอร์ <br> และ ห้องเรียนคอมพิวเตอร์</td> <td><img src="img/10/1024.jpg" width="90%" height="60%" ></td>
+       </tr>
+       <tr>
+        <td>1225</td> <td>ห้องเรียนคอมพิวเตอร์</td> <td><img src="img/10/1025.jpg" width="90%" height="60%" ></td>
+      </tr>
+    </tr>
+       <td rowspan="8"> 3 </td> <td>1231</td> <td>ห้อง ม.4/2</td> <td><img src="img/10/1031.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1232</td> <td>ห้อง ม.4/3</td> <td><img src="img/10/1032.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1233</td> <td>ศูนย์ไอซีทีและสื่อนวัตกรรม</td> <td><img src="img/10/1033.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1234</td> <td>ห้อง ม.4/4</td> <td><img src="img/10/1034.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1235</td> <td>ห้อง ม.4/5</td> <td><img src="img/10/1035.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1236</td> <td>ห้อง ม.4/6</td> <td><img src="img/10/1036.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1237</td> <td>ห้อง ม.4/7</td> <td><img src="img/10/1037.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1238</td> <td>ห้อง ม.4/8</td> <td><img src="img/10/1038.jpg" width="90%" height="60%" ></td> 
+       </tr>
+      </tr>
+       <td rowspan="8"> 4 </td> <td>1241</td> <td>ห้อง ม.4/9</td> <td><img src="img/10/1041.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1242</td> <td>ห้อง ม.4/10</td> <td><img src="img/10/1042.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1243</td> <td>-</td> <td><img src="img/10/1043.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1244</td> <td>ห้อง ม.4/11</td> <td><img src="img/10/1044.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1245</td> <td>ห้อง ม.4/12</td> <td><img src="img/10/1045.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1246</td> <td>ห้อง ม.4/13</td> <td><img src="img/10/1046.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1247</td> <td>ห้อง ม.4/14</td> <td><img src="img/10/1047.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>1248</td> <td>ห้อง ม.4/15</td> <td><img src="img/10/1048.jpg" width="90%" height="60%" ></td> 
+       </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+  <h4></h4>
+    
+    </html>

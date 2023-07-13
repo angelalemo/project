@@ -1,0 +1,83 @@
+main{
+    padding: 2rem;
+}
+@media screen and (max-width: 360px) {
+    main {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+    }
+    article {
+        width: 100%;
+    }
+}
+
+.banner{
+    background-color: palevioletred;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+}
+.banner__content{ 
+    padding: 5%; 
+    max-width: 250px;
+    margin: 0 auto; 
+    display: flex;
+    text-align: center;
+}
+.banner__text{ 
+    flex-grow: 10;
+    line-height: 8px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 16px;
+}
+.text{
+    line-height: 12px;
+    font-size: 24px;
+    max-width: 200px;
+}
+body { 
+  background-repeat:no-repeat;
+  background-color: aliceblue;
+
+}
+.button1 {
+position: relative;
+background-color: #001aff;
+border: none;
+font-size: 24px;
+color: #FFFFFF;
+padding: 20px;
+width: 100px;
+text-align: center;
+transition-duration: 0.4s;
+text-decoration: none;
+overflow: hidden;
+cursor: pointer;
+}
+
+.button1:after { 
+content: "";
+background: #f1f1f1;
+display: block;
+position: absolute;
+padding-top: 200%;
+padding-left: 150%;
+margin-left: -20px !important;
+margin-top: -100%;
+opacity: 0;
+transition: all 0.8s
+}
+
+.button1:active:after { 
+padding: 0;
+margin: 0;
+opacity: 1;
+transition: 0s
+}
+.button{ 
+background-color: transparent;
+border: none;
+}

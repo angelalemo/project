@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>:: แผนที่ยุพราชวิทยาลัยเรือนวิเชียร ::</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <meta content="อาคาร2 เรือนวิเชียร" name="description" />
+  <meta content="แผนที่ยุพราชวิทยาลัย(อาคาร2)" name="author" />
+  <link href="css/style1.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    html,
+		body {
+		margin: 0; 
+    background-repeat:no-repeat;
+    background-color: #FEEEEC;
+	}
+  .banner{
+    background-color: #FD7094;
+    height: 200px;
+  }
+  .banner__content{
+    padding: 5%; 
+    max-height: 10%;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+   }
+  .banner__text{
+    flex-grow: 20;
+    font-size: 24PX;
+    font-family: Cambria, Cochin, Georgia, kanit, 'Times New Roman', serif;
+    text-align: center;
+    
+  }
+   .main{ 
+   max-width: 100%;
+   margin: 0 auto;
+   font-size: 18PX;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   border-style: dashed;
+   border-color: #FE7F9B;
+   border-radius: 12px;
+   padding: 10px;
+   border-width: 6px;
+   background-color: #FFA6AF;
+
+   }
+   .back{ 
+   max-width: 100%;
+   margin: 0 auto;
+   font-size: 0%;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   }
+	
+   .table{ 
+   max-width: 100%;
+   margin: 0 auto;
+   font-size: 18PX;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: center;
+   background-color: #FFB5BB;
+   }
+   .img{
+   margin: 0 auto;
+   max-width: 100%;
+   text-align: center;
+   padding: 3%;
+   }
+   
+	
+  </style>
+  <body>
+   
+    <div class="banner">
+      <div class="banner__content"> 
+        <div class="banner__text"> <h1>YUPPARAJ MAP อาคาร2 <br>เรือนวิเชียร</h1>
+        </div>
+      </div>
+    </div>
+    <div class="back">
+      <p>Latitude: <span id="latitude"></span></p><p>Longitude: <span id="longitude"></span></p> 
+    </div>
+    
+    <div class="img">
+    <img src="img/2/2yup.JPG" width="90%" height="60%" >
+  </div>
+  
+  <script>
+    function showPosition(position) {
+      var latitudeElement = document.getElementById("latitude");
+      var longitudeElement = document.getElementById("longitude");
+
+      latitudeElement.textContent = position.coords.latitude;
+      longitudeElement.textContent = position.coords.longitude;
+
+      var lat = position.coords.latitude;
+      var long = position.coords.longitude;
+
+      var anchorElement = document.getElementById("mapurl");
+      var map_address = "https://www.google.com/maps/dir/"+lat+","+long+"/18.792273425340902, 98.98872888778429";
+      anchorElement.href = map_address;
+    }
+
+    function showError(error) {
+      var latitudeElement = document.getElementById("latitude");
+      var longitudeElement = document.getElementById("longitude");
+
+      latitudeElement.textContent = "Error: " + error.message;
+      longitudeElement.textContent = "Error: " + error.message;
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      var latitudeElement = document.getElementById("latitude");
+      var longitudeElement = document.getElementById("longitude");
+
+      latitudeElement.textContent = "Geolocation is not supported.";
+      longitudeElement.textContent = "Geolocation is not supported.";
+    }
+  </script>
+<div class="main">
+  <p class="h2">เส้นทางไปยังสถานที่</ย>
+  <br><a id="mapurl" href="google.com"><button class="btn btn-warning btn-md">นำทาง</button></a>
+</div>
+  
+  <div class="table">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12"
+  <h3>ห้อง ณ อาคาร</h3>
+  <table border="1" width="100%">
+    <thead align="center">
+      <th width="5%">ชั้น</th> <th width="15%">รหัสห้อง</th> <th width="30%">ชื่อห้อง/หน้าที่</th> <th width="50%">รูปห้อง</th>
+    <tbody align="center">
+       <tr>
+        <td rowspan="6"> 1 </td> <td>211</td> <td>ห้องศูนย์การเรียนภาษาต่างประเทศ2</td> <td><img src="img/2/211.jpg" width="90%" height="60%" >
+       </tr>
+       <tr>
+        <td>212</td> <td>English Learning Center</td> <td><img src="img/2/212.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>213</td> <td>English Ddepartment Office</td> <td><img src="img/2/213.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>214</td> <td>HCEC</td> <td><img src="img/2/214.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>215</td> <td>ห้องงานจัดสอบ</td> <td><img src="img/2/215.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>216</td> <td>ห้องถ่ายเอกสาร</td> <td><img src="img/2/216.jpg" width="90%" height="60%" ></td> 
+       </tr>
+      </tr>
+       <td rowspan="6"> 2 </td> <td>221</td> <td>ห้อง ม.3/14</td> <td><img src="img/2/221.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>222</td> <td>ห้องพักครูภาษาจีน</td> <td><img src="img/2/222.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>223</td> <td>Resource Center</td> <td><img src="img/2/223.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>224</td> <td>ห้อง ม.2/14</td> <td><img src="img/2/224.jpg" width="90%" height="60%"  ></td> 
+       </tr>
+       <tr>
+        <td>225</td> <td>ห้อง ม.1/14</td> <td><img src="img/2/225.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>226</td> <td>ห้องพักครูภาษาอังกฤษ</td> <td><img src="img/2/226.jpg" width="90%" height="60%" ></td> 
+       </tr>
+      </tr>
+       <td rowspan="6"> 3 </td> <td>231</td> <td>ห้องศูนย์การเรียนภาษาจีน</td> <td><img src="img/2/231.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>232</td> <td>ห้อง ม.1/1</td> <td><img src="img/2/232.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>233</td> <td>ห้อง ม.1/2</td> <td><img src="img/2/233.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>234</td> <td>ห้อง ม.2/1</td> <td><img src="img/2/234.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>235</td> <td>ห้อง ม.2/2</td> <td><img src="img/2/235.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>236</td> <td>ห้องพักครูภาษาฝรั่งเศษ</td> <td><img src="img/2/236.jpg" width="90%" height="60%" ></td> 
+       </tr>
+      </tr>
+       <td rowspan="6"> 4 </td> <td>241</td> <td>ห้องศูนย์การเรียนภาษาญี่ปุ่น</td> <td><img src="img/2/241.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>242</td> <td>ห้อง ม.3/1</td> <td><img src="img/2/242.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>243</td> <td>ห้อง ม.3/2</td> <td><img src="img/2/243.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>244</td> <td>ห้อง ม.4/16</td> <td><img src="img/2/244.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>245</td> <td>Laboratory</td> <td><img src="img/2/245.jpg" width="90%" height="60%" ></td> 
+       </tr>
+       <tr>
+        <td>246</td> <td>Staffroom</td> <td><img src="img/2/246.jpg" width="90%" height="60%" ></td> 
+       </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+</div>
+  <h4></h4>
+    
+    </html>

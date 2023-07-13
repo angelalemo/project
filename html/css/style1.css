@@ -1,0 +1,40 @@
+main{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+}
+@media screen and (max-width: 360px) {
+    main {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+    }
+    article {
+        width: 100%;
+    }
+}
+.headner{
+    background-color: palevioletred;
+    height: 300px;
+}
+.banner__content{ 
+    padding: 4%; 
+    max-width: 1000px;;
+    max-height: 500px;
+    margin: 0 auto;
+}
+.banner__text{
+    flex-grow: 10;
+    line-height:30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20PX;
+}
+body{ 
+  background-color: azure;
+}
+.img{
+max-width: 500px;
+padding: 1%;
+margin: 0 auto;
+}

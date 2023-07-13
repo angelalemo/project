@@ -1,0 +1,169 @@
+
+<html>
+  <head>
+<head>
+  <meta charset="utf-8"> 
+  <title>:: แผนที่ยุพราชวิทยาลัย ::</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  <meta content="แผนที่ยุพราชวิทยาลัย" name="description" /> 
+  <meta content="แผนที่ยุพราชวิทยาลัย" name="author" /> 
+  <link href="css/STYLE.css" rel="stylesheet" type="text/css" /> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    html,
+.banner{
+    background-color: #FD7094; 
+    max-width: 100%;
+    text-align: center;
+}
+.banner__content{ 
+    max-width: 100%;
+    margin: 0 auto; 
+    display: flex;
+    text-align: center;
+}
+.banner__text{ 
+    flex-grow: 10;
+    line-height: 12px;
+    font-family: Cambria, Cochin, Georgia, kanit, 'Times New Roman', serif;
+    text-align: center;
+    max-width: 100%;
+    font-size: 24PX;
+}
+body { 
+  background-repeat:no-repeat;
+  background-image: url("img/po2.png");
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 24PX;
+}
+.dropdown{
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+}
+.red{
+  border-style: double;
+   border-color: rgb(0, 0, 0);
+   padding: 20px;
+   max-width: 110%;
+   margin: auto;
+   border-radius: 12px;
+   border-width: 6px;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="banner"> 
+     <div class="banner__content"> 
+		 <div class="banner__text"> 
+			<a href="https://www.yupparaj.ac.th/"><button class="button"><img src="img/yrc_logo.png" width="150" height="200"></button></a>
+     
+      <br>
+      <br>
+			<strong><h1>YUPPARAJ MAP</h1></strong><br><h2>แผนที่ยุพราชวิทยาลัย</h2>
+  <br><div class="red"><p>ตำแหน่งของผู้ใช้</p>
+  <br>
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p></div>
+    <script>
+    function showPosition(position) {
+      var latitudeElement = document.getElementById("latitude");
+      var longitudeElement = document.getElementById("longitude");
+
+      latitudeElement.textContent = position.coords.latitude;
+      longitudeElement.textContent = position.coords.longitude;
+
+      var lat = position.coords.latitude;
+      var long = position.coords.longitude;
+
+    }
+
+    function showError(error) {
+      var latitudeElement = document.getElementById("latitude");
+      var longitudeElement = document.getElementById("longitude");
+
+      latitudeElement.textContent = error.message;
+      longitudeElement.textContent = error.message;
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      var latitudeElement = document.getElementById("latitude");
+      var longitudeElement = document.getElementById("longitude");
+
+      latitudeElement.textContent = "Geolocation is not supported.";
+      longitudeElement.textContent = "Geolocation is not supported.";
+    }
+    function getValue() {
+    let v = document.getElementById("mark").value;
+    console.log( v );
+    if ( v == 1 ){
+      document.location.href = 'html/state1.html'} 
+      else if ( v == 2){
+      document.location.href = 'html/state2.html'} 
+      else if ( v == 3){
+      document.location.href = 'html/state3.html'}
+      else if ( v == 4){
+      document.location.href = 'html/state4.html'}
+      else if ( v == 5){
+      document.location.href = 'html/state5.html'}
+      else if ( v == 6){
+      document.location.href = 'html/state6.html'}
+      else if ( v == 7){
+      document.location.href = 'html/state7.html'}
+      else if ( v == 8){
+      document.location.href = 'html/state8.html'}
+      else if ( v == 9){
+      document.location.href = 'html/state9.html'}
+      else if ( v == 10){
+      document.location.href = 'html/state10.html'}
+      else if ( v == 11){
+      document.location.href = 'html/state11.html'}
+      else if ( v == 12){
+      document.location.href = 'html/state12.html'}
+      else if ( v == 13){
+      document.location.href = 'html/state13.html'}
+    }
+  </script>
+<br>
+    	<form method="post">
+
+        <div class="red"> <p>สถานที่ต้องการไป</p><br><select class="dropdown" size="1" id="mark">
+                       <option value="1">อาคาร 1 ตึกยุพราช</option>
+                       <option value="2">อาคาร 2 เรือนวิเชียร</option>
+                       <option value="3">อาคาร 3 เรือนรัตน์</option>
+                       <option value="4">อาคาร 4 เรือนเพชร</option>
+                       <option value="5">อาคาร 5 เรือนวชิระ</option>
+                       <option value="6">อาคาร 6 เรือนพัชระ</option>
+                       <option value="7">อาคาร 7 อาคารรัตนมณี</option>
+                       <option value="8">อาคาร 8 อาคารศรีมรกต</option>
+                       <option value="9">อาคาร 9 อาคารนวรัตน์</option>
+                       <option value="10">อาคาร 10 อาคารเพชรรัตนราชสุดา</option>
+                       <option value="11">อาคาร 11 อาคารยุพราชรังสรรค์</option>
+                       <option value="12">อาคาร 12 อาคารวชิรดารา</option>
+                       <option value="13">อาคาร 13 อาคารวิทยบริการดารารัศมี</option>
+    
+                      </select></div>
+                      <span id="mark"></span>
+            <br><br><input type="button" class="btn btn-warning btn-lg" onclick="getValue()" value="ยืนยันสถานที่">
+            
+        
+
+      </form>
+
+
+
+
+</body>
+</html>
